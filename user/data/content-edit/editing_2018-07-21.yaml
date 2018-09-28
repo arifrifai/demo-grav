@@ -1,0 +1,10 @@
+-
+    date: 'Sat 21 11:15:48'
+    user: peter
+    route: /sqlite_unsec
+    diff: '<table class="Differences DifferencesSideBySide"><thead><tr><th colspan="2">Old Version</th><th colspan="2">New Version</th></tr></thead><tbody class="ChangeEqual"><tr><th>1</th><td class="Left"><span>[sql-table]</span>&nbsp;</span></td><th>1</th><td class="Right"><span>[sql-table]</span>&nbsp;</span></td></tr><tr><th>2</th><td class="Left"><span>SELECT * FROM data</span>&nbsp;</span></td><th>2</th><td class="Right"><span>SELECT * FROM data</span>&nbsp;</span></td></tr></tbody><tbody class="ChangeReplace"><tr><th>3</th><td class="Left"><span>[/sql-table]<del></del></span>&nbsp;</td><th>3</th><td class="Right"><span>[/sql-table]<ins>ppp</ins></span></td></tr></tbody><tbody class="ChangeEqual"><tr><th>4</th><td class="Left"><span></span>&nbsp;</span></td><th>4</th><td class="Right"><span></span>&nbsp;</span></td></tr></tbody></table>'
+-
+    date: 'Sat 21 11:22:40'
+    user: peter
+    route: /sqlite_unsec
+    diff: '<table class="Differences DifferencesSideBySide"><thead><tr><th colspan="2">Old Version</th><th colspan="2">New Version</th></tr></thead><tbody class="ChangeEqual"><tr><th>1</th><td class="Left"><span>[sql-table]</span>&nbsp;</span></td><th>1</th><td class="Right"><span>[sql-table]</span>&nbsp;</span></td></tr><tr><th>2</th><td class="Left"><span>SELECT * FROM data</span>&nbsp;</span></td><th>2</th><td class="Right"><span>SELECT * FROM data</span>&nbsp;</span></td></tr></tbody><tbody class="ChangeReplace"><tr><th>3</th><td class="Left"><span>[/sql-table]ppp<del></del></span>&nbsp;</td><th>3</th><td class="Right"><span>[/sql-table]ppp<ins>qqq</ins></span></td></tr></tbody><tbody class="ChangeEqual"><tr><th>4</th><td class="Left"><span></span>&nbsp;</span></td><th>4</th><td class="Right"><span></span>&nbsp;</span></td></tr></tbody></table>'

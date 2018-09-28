@@ -1,0 +1,35 @@
+#!/bin/bash
+root=new-grav
+user=richard
+status=$(grep gandalf /etc/hosts)
+if [ ! -z "$status" ];
+  then
+    remote="gandalf"
+    remoteroot="/var/www/html"
+    group="www-data"
+  else
+    status=$(grep -i sptd /etc/hosts)
+    if [ ! -z "$status" ];
+      then
+        remote=sptd
+        remoteroot="/volume1/web"
+        group="http"
+      else
+        echo "Failure: Neither SPTD nor gandalf found in hosts"
+        exit 1
+    fi;
+fi
+echo "Move $(tput setaf 4; tput setab 7)$direction$(tput sgr 0) $(tput setaf 1; tput setab 7)$remote$(tput sgr 0) [group: $group]"
+
+if [ ! -d "user" ];  then
+  echo "Failure: Can't find local directory tree  <user>"
+  exit 2
+fi
+if ! ssh richard@"$remote" "[ -d  $remoteroot/$root ]"; then
+  echo "Remote error - directory $remoteroot/$root not on $remote"
+  exit 3
+fi
+rsync -aPzhve ssh --delete  --exclude "$exclude" user/pages "$user@$remote:$remoteroot/$root/user"
+#rsync -aPzhve ssh --delete  --exclude "$exclude" user/data/sqlite "$user@$remote:$remoteroot/$root/user/data"
+rsync -LPazhve ssh --delete  --exclude ".git*" --exclude ".sass*"  user/plugins/{map-marker-leaflet,content-edit,var-dumper,sequential-form,map-quest,sqlite} "$user@$remote:$remoteroot/$root/user/plugins"
+ssh "$user@$remote" "find $remoteroot/$root -user $user | xargs chown $user:$group"

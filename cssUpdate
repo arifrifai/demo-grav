@@ -1,0 +1,3 @@
+#!/bin/bash
+wt compile -b "user/themes/quarksptd/css" "user/themes/quarksptd/scss/custom.scss"
+wt compile -b "user/themes/quarksptd/css-compiled" "user/themes/quarksptd/scss/theme.scss"

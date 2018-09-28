@@ -1,0 +1,11 @@
+email: richard@1ptd.com
+fullname: Richard
+title: Administrator
+state: enabled
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+hashed_password: $2y$10$wIB/XBX/EeGX5mqfmIvC9.EyW5JXoFTfc3F3QR8Ct0085yVRwnr36
